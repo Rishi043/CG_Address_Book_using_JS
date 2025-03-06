@@ -1,3 +1,4 @@
+
 class Contact {
     constructor(firstName, lastName, address, city, state, zip, phone, email) {
         if (!this.isValidName(firstName)) throw new Error("Invalid First Name");
@@ -46,8 +47,18 @@ class AddressBook {
         this.contacts = [];
     }
 
-    // UC-3 Add Contact
+    // UC-3 add contact
     addContact(contact) {
         this.contacts.push(contact);
+    }
+
+    // UC-4 edit contact
+    editContact(name, updatedContact) {
+        let contact = this.contacts.find(c => c.firstName === name);
+        if (contact) {
+            Object.assign(contact, updatedContact);
+        } else {
+            throw new Error("Contact not found.");
+        }
     }
 }
