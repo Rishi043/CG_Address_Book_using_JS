@@ -70,4 +70,11 @@ class AddressBook {
             throw new Error("Contact not found.");
         }
     }
+
+    // UC-6 count contacts 
+    countContacts() {
+        return this.contacts.length;
+    }
+
+    
 }
