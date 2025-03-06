@@ -83,6 +83,11 @@ class AddressBook {
             throw new Error("Duplicate contact entry is not allowed.");
         }
         this.contacts.push(contact);
+    } 
+
+    // UC-8 search by city or state
+    searchByCityOrState(location) {
+        return this.contacts.filter(contact => contact.city === location || contact.state === location);
     }
     
 }
